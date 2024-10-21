@@ -88,7 +88,7 @@ def count_files(path_to_subfolder, folder: str): # Recursive Function
 
 
 
-def main(page: str, limit: int, data_dir: Path, folder:bool):
+def main(page: str, limit: int, data_dir: Path, folder:str):
     """
     Downloads the main page (with revisions) for the given page title.
     Organizes the revisions into a folder structure like
