@@ -134,25 +134,7 @@ def main(page: str, limit: int, data_dir: Path, update:str, folder:str):
 
 
 
-        # print("Identifying revisions. Parsing but not downloading nor saving... \n")
-        # for wiki_revision in tqdm(parse_mediawiki_revisions(raw_revisions), total=limit):
-        #     revision_path = construct_path(
-        #         wiki_revision=wiki_revision, page_name=page, save_dir=data_dir
-        #     )
-        #     if not revision_path.exists():
-        #         revision_path.parent.mkdir(parents=True, exist_ok=True)
-        #     revision_path.write_text(wiki_revision)
-
-        #     print(f"'folders': {folder} \n")
-
-        #     print("Counting number of revisions...\n")
-        #     number_of_revisions = count_files(data_dir/page, folder)
-
-        #     rm 
-
-        #     print(f'''The number of revisions is {number_of_revisions}''')
-
-
+    
 
 def construct_path(page_name: str, save_dir: Path, wiki_revision: str) -> Path:
     revision_id = extract_id(wiki_revision)
