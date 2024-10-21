@@ -58,10 +58,10 @@ def find_yearmonth(revision: str) -> str:
     return extract_yearmonth(find_timestamp(revision))
 
 
-def count_files(path_to_subfolder, folder: bool): # Recursive Function
+def count_files(path_to_subfolder, folder: str): # Recursive Function
     count = 0
 
-    if folder == False:
+    if folder == "False":
         for item in os.listdir(path_to_subfolder):
             item_path = os.path.join(path_to_subfolder, item)
             
@@ -107,6 +107,8 @@ def main(page: str, limit: int, data_dir: Path, folder:bool):
             revision_path.parent.mkdir(parents=True, exist_ok=True)
         revision_path.write_text(wiki_revision)
 
+    print(f"'folders': {folder}")
+
     print("Counting number of revisions...")
     number_of_revisions = count_files(data_dir/page, folder)
 
@@ -148,6 +150,6 @@ if __name__ == "__main__":
         default=10,
         help="Number of revisions to download"
     )
-    parser.add_argument("count_files", type=bool, help="Counting revisions (represented by each file)")
+    parser.add_argument("count_files", type=str, help="Counting revisions (represented by each file)")
     args = parser.parse_args()
     main(page=args.page, limit=args.limit, data_dir=DATA_DIR, folder=args.count_files)
