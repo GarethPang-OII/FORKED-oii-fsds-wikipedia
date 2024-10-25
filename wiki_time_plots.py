@@ -1,5 +1,20 @@
 # Save this as wiki_time_plots.py (using underscores instead of hyphens)
 
+import os
+
+os.system('pip install pandas && pip freeze > requirements.txt');
+os.system('pip install requests && pip freeze > requirements.txt');
+os.system('pip install bs4 && pip freeze > requirements.txt');
+os.system('pip install pathlib && pip freeze > requirements.txt');
+os.system('pip install datetime && pip freeze > requirements.txt');
+os.system('pip install tqdm && pip freeze > requirements.txt');
+os.system('pip install argparse && pip freeze > requirements.txt');
+os.system('pip install lxml && pip freeze > requirements.txt');
+os.system('pip install pyarrow && pip freeze > requirements.txt');
+os.system('pip install matplotlib && pip freeze > requirements.txt');
+os.system('pip install seaborn && pip freeze > requirements.txt');
+os.system('pip install pathlib && pip freeze > requirements.txt');
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
