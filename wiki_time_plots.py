@@ -2,19 +2,6 @@
 
 import os
 
-os.system('pip install pandas && pip freeze > requirements.txt');
-os.system('pip install requests && pip freeze > requirements.txt');
-os.system('pip install bs4 && pip freeze > requirements.txt');
-os.system('pip install pathlib && pip freeze > requirements.txt');
-os.system('pip install datetime && pip freeze > requirements.txt');
-os.system('pip install tqdm && pip freeze > requirements.txt');
-os.system('pip install argparse && pip freeze > requirements.txt');
-os.system('pip install lxml && pip freeze > requirements.txt');
-os.system('pip install pyarrow && pip freeze > requirements.txt');
-os.system('pip install matplotlib && pip freeze > requirements.txt');
-os.system('pip install seaborn && pip freeze > requirements.txt');
-os.system('pip install pathlib && pip freeze > requirements.txt');
-
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -91,6 +78,7 @@ def create_time_series_plots_raw(df, article_name, output_dir=None):
     # Weekly plot
     weekly_counts = df.resample('W', on='timestamp')['revision_id'].count()
     ax1.plot(weekly_counts.index, weekly_counts.values)
+
     ax1.set_title('Weekly Revision Count')
     ax1.set_xlabel('Date')
     ax1.set_ylabel('Number of Revisions')
@@ -98,6 +86,7 @@ def create_time_series_plots_raw(df, article_name, output_dir=None):
     # Monthly plot
     monthly_counts = df.resample('ME', on='timestamp')['revision_id'].count()
     ax2.plot(monthly_counts.index, monthly_counts.values)
+
     ax2.set_title('Monthly Revision Count')
     ax2.set_xlabel('Date')
     ax2.set_ylabel('Number of Revisions')
@@ -105,6 +94,7 @@ def create_time_series_plots_raw(df, article_name, output_dir=None):
     # Yearly plot
     yearly_counts = df.resample('YE', on='timestamp')['revision_id'].count()
     ax3.plot(yearly_counts.index, yearly_counts.values)
+
     ax3.set_title('Yearly Revision Count')
     ax3.set_xlabel('Date')
     ax3.set_ylabel('Number of Revisions')
